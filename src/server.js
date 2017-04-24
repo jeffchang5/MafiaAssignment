@@ -5,7 +5,7 @@ import Hapi from 'hapi';
 import mafia from './mafia';
 import config from './config/testing';
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 
 
 if (!(config)) {
@@ -14,7 +14,7 @@ if (!(config)) {
 }
 
 const server = new Hapi.Server();
-server.connection({ port: PORT, host: 'localhost' });
+server.connection({ port: PORT, host: '0.0.0.0' });
 server.route({
   method: 'GET',
   path: '/',
