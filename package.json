@@ -4,13 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "sudo nodemon dist/bundle.js",
     "start": "node dist/bundle.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "config": "^1.25.1",
     "hapi": "^16.1.1",
     "inert": "^4.2.0"
   },

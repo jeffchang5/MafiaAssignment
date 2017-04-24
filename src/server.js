@@ -1,6 +1,7 @@
 'use strict';
 
 // Node packages
+import path from 'path';
 import Hapi from 'hapi';
 
 // Personal files
@@ -17,6 +18,8 @@ if (!(config)) {
 }
 
 const server = new Hapi.Server();
+console.log(__dirname);
+console.log(path.resolve(__dirname, 'public'));
 server.connection({ port: PORT, host: '0.0.0.0' });
 server.register(Inert, (err) => {
     if(err) {
@@ -27,7 +30,7 @@ server.register(Inert, (err) => {
       path: '/{param*}',
       handler: {
         directory: {
-          path: 'public'
+          path: path.resolve(__dirname, 'public')
         }
       }
     });
